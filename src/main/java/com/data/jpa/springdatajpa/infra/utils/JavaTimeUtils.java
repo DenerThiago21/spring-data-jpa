@@ -1,4 +1,4 @@
-package me.dio.academia.digital.infra.utils;
+package com.data.jpa.springdatajpa.infra.utils;
 
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;

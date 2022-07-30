@@ -1,12 +1,12 @@
-package me.dio.academia.digital.infra.jackson.ser;
-
-import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.databind.SerializerProvider;
-import com.fasterxml.jackson.databind.ser.std.StdSerializer;
-import me.dio.academia.digital.infra.utils.JavaTimeUtils;
+package com.data.jpa.springdatajpa.infra.jackson.ser;
 
 import java.io.IOException;
 import java.time.LocalDate;
+
+import com.data.jpa.springdatajpa.infra.utils.JavaTimeUtils;
+import com.fasterxml.jackson.core.JsonGenerator;
+import com.fasterxml.jackson.databind.SerializerProvider;
+import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 
 /**
  * @author Venilton Falvo Jr

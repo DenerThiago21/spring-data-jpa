@@ -1,12 +1,12 @@
-package me.dio.academia.digital.infra.jackson.deser;
-
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.databind.DeserializationContext;
-import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
-import me.dio.academia.digital.infra.utils.JavaTimeUtils;
+package com.data.jpa.springdatajpa.infra.jackson.deser;
 
 import java.io.IOException;
 import java.time.LocalDate;
+
+import com.data.jpa.springdatajpa.infra.utils.JavaTimeUtils;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 
 /**
  * @author Venilton Falvo Jr
