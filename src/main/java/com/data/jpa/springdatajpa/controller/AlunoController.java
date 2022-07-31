@@ -2,6 +2,8 @@ package com.data.jpa.springdatajpa.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -43,7 +45,7 @@ public class AlunoController {
 
     // AlunoForm é a implementacao de um DTO
     @PostMapping
-    public Aluno create(@RequestBody AlunoForm form) {
+    public Aluno create(@Valid @RequestBody AlunoForm form) {
         return service.create(form);
     }
 }
