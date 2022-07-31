@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.data.jpa.springdatajpa.entity.Aluno;
+import com.data.jpa.springdatajpa.entity.AvaliacaoFisica;
 import com.data.jpa.springdatajpa.entity.form.AlunoForm;
 import com.data.jpa.springdatajpa.entity.form.AlunoFormUpdate;
 import com.data.jpa.springdatajpa.repository.AlunoRepository;
@@ -14,6 +15,7 @@ import com.data.jpa.springdatajpa.service.AlunoService;
 public class AlunoServiceImpl implements AlunoService {
 
     private AlunoRepository repository;
+
     //injeção de dependencias via constructor
     public AlunoServiceImpl(AlunoRepository repository) {
         this.repository = repository;
@@ -53,8 +55,14 @@ public class AlunoServiceImpl implements AlunoService {
 
     @Override
     public void delete(Long id) {
-        // TODO Auto-generated method stub
+        // TODO Auto-generated method stubx
         
+    }
+
+    public List<AvaliacaoFisica> getAllAvaliacaoFisica(Long id) {
+        Aluno aluno = repository.findById(id).get();
+
+        return aluno.getAvaliacoes();
     }
     
 }
