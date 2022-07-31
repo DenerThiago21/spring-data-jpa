@@ -1,5 +1,14 @@
 package com.data.jpa.springdatajpa.entity.form;
 
+import java.time.LocalDate;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class AlunoForm {
     private String nome;
     
@@ -7,5 +16,5 @@ public class AlunoForm {
 
     private String bairro;
 
-    private String dataNascimento;
+    private LocalDate dataNascimento;
 }
