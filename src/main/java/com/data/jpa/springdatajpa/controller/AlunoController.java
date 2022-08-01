@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.data.jpa.springdatajpa.entity.Aluno;
@@ -34,8 +35,8 @@ public class AlunoController {
     }
 
     @GetMapping
-    public List<Aluno> getAll() {
-        return service.getAll();
+    public List<Aluno> getAll(@RequestParam(value = "dataNascimento", required = false) String dataNascimento) {
+        return service.getAll(dataNascimento);
     }
 
     @GetMapping("/avaliacoes/{id}")

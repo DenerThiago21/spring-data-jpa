@@ -8,6 +8,6 @@ import com.data.jpa.springdatajpa.entity.form.MatriculaForm;
 public interface MatriculaService {
     Matricula create(MatriculaForm form);
     Matricula get(Long id);
-    List<Matricula> getAll();
+    List<Matricula> getAll(String bairro);
     void delete(Long id);
 }

@@ -42,8 +42,10 @@ public class MatriculaServiceImpl implements MatriculaService{
     }
 
     @Override
-    public List<Matricula> getAll() {
-        return repository.findAll();
+    public List<Matricula> getAll(String bairro) {
+        if(bairro == null) return repository.findAll();
+
+        return repository.findByAlunoBairro(bairro);
     }
 
     @Override

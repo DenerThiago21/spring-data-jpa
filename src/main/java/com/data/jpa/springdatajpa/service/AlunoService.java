@@ -10,7 +10,7 @@ import com.data.jpa.springdatajpa.entity.form.AlunoFormUpdate;
 public interface AlunoService {
     Aluno create(AlunoForm form);
     Aluno get(Long id);
-    List<Aluno>getAll();
+    List<Aluno>getAll(String dataNascimento);
     List<AvaliacaoFisica> getAllAvaliacaoFisica(Long id);
     Aluno update(Long id, AlunoFormUpdate formAluno);
     void delete(Long id);

@@ -1,5 +1,6 @@
 package com.data.jpa.springdatajpa.service.impl;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -8,6 +9,7 @@ import com.data.jpa.springdatajpa.entity.Aluno;
 import com.data.jpa.springdatajpa.entity.AvaliacaoFisica;
 import com.data.jpa.springdatajpa.entity.form.AlunoForm;
 import com.data.jpa.springdatajpa.entity.form.AlunoFormUpdate;
+import com.data.jpa.springdatajpa.infra.utils.JavaTimeUtils;
 import com.data.jpa.springdatajpa.repository.AlunoRepository;
 import com.data.jpa.springdatajpa.service.AlunoService;
 
@@ -42,9 +44,12 @@ public class AlunoServiceImpl implements AlunoService {
     }
 
     @Override
-    public List<Aluno> getAll() {
-        List<Aluno> alunos = repository.findAll();
-        return alunos;
+    public List<Aluno> getAll(String dataNascimento) {
+
+        if(dataNascimento == null) return repository.findAll();
+
+        LocalDate localDate = LocalDate.parse(dataNascimento, JavaTimeUtils.LOCAL_DATE_FORMATTER);
+        return repository.findByDataNascimento(localDate);
     }
 
     @Override
